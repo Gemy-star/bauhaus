@@ -12,11 +12,11 @@
                                 <div class="single-footer-caption mb-30">
                                     <!-- logo -->
                                     <div class="footer-logo">
-                                        <a href="#"><img src="{% static 'images/logo_footer.png' %}" alt=""></a>
+                                        <a href="#"><img src="{% static 'img/logo_footer.png' %}" alt=""></a>
                                     </div>
                                     <div class="footer-tittle">
                                         <div class="footer-pera">
-                                            <p class="body-font" >طموحنان عنان السماء</p>
+                                            <p class="body-font" > طموحنا عنان السماء</p>
                                         </div>
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@
                                         <li><a href="{% url 'register-engineer' %}" class="body-font" > إضافة مهندس</a></li>
                                         {% endif %}
                                         <li><a href="{% url 'register' %}" class="body-font" >تسجيل الدخول</a></li>
-                                        <li><a href="{% url 'send-contact' %}" class="body-font" > إتصل بنا</a></li>
+                                        <li><a href="{% url 'send-contact' %}" class="body-font" > أتصل بنا </a></li>
                                        {% if request.user.user_type ==  1 or   request.user.user_type ==  2 %}
 										<li><a class="aida-font" href="{% url 'contact-list' %}">قائمة الأستفسارات</a></li>
                                     {% endif %}
@@ -66,6 +66,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
             </div>
         </div>
         <!-- Footer End-->

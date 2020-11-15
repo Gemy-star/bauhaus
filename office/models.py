@@ -120,16 +120,24 @@ class RequestMeasurement(models.Model):
 
 
 class Survey(models.Model):
-    color = models.CharField(max_length=255, null=True, blank=True, verbose_name='اللون المفضل')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='العميل')
-    service_type = models.ForeignKey(Service, on_delete=models.CASCADE, null=True, verbose_name='نوع الخدمه')
-    interests = models.CharField(max_length=255, null=True, blank=True, verbose_name='الاهتمامات')
-    quote = models.CharField(max_length=255, null=True, blank=True, verbose_name='نبذه')
+    name = models.CharField(max_length=255 ,null=True ,verbose_name='الأسم')
+    address = models.CharField(max_length=255 ,null=True ,verbose_name='العنوان')
+    phone = models.IntegerField(null=True , verbose_name='الهاتف')
+    color_q = models.BooleanField(verbose_name='هل انت من مفضلين الألوان المبهجة ام القاتمة', default=False)
+    design_q = models.BooleanField(verbose_name='هل انت من محبين التصميم الحديث العصري', default=False)
+    hotcolor_q = models.BooleanField(default=False,
+                                     verbose_name='هل انت من مفضلين الألوان الحارة , مثل : الأحمر , الأصفر')
+
+    personal_q = models.BooleanField(default=False, verbose_name='هل شخصيتك من الشخصيات متغيرة الاطباع ')
+    shape_q = models.BooleanField(default=False, verbose_name='هل انت من مفضلين الأشكال الانسيابية ام المنظمة')
+    hobby_q = models.BooleanField(default=False, verbose_name='هل انت من محبين التأمل والقراءة')
+    though_q = models.BooleanField(default=False, verbose_name='هل شخصيتك تؤمن بعلم طاقة وتأثيرها على الإنسان')
+    birthday = models.CharField(max_length=255,null=True, verbose_name='تاريخ الميلاد')
 
     class Meta:
-        ordering = ['color', ]
+        ordering = ['birthday', ]
         verbose_name = 'استطلاع رأى'
         verbose_name_plural = 'استطلاعات الرأى'
 
     def __str__(self):
-        return self.color
+        return str(self.birthday)

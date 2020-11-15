@@ -155,44 +155,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-cat mb-110">
-                            <img src="{% static 'img/popular1.png' %}" alt="">
-                            <div class="img-cap">
-                                   <h4 class="aida-font">تصميمات أثاث</h4>
-                            <p class="aida-font"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-cat mb-110">
-                            <img src="{% static 'img/popular2.png' %}" alt="">
-                            <div class="img-cap">
-                            <h4 class="aida-font">تمصيمات مكاتب عمل</h4>
-                            <p class="aida-font"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-cat mb-110">
-                            <img src="{% static 'img/popular3.png' %}" alt="">
-                            <div class="img-cap">
- <h4 class="aida-font">غرف نوم</h4>
-                            <p class="aida-font"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-cat mb-110">
-                            <img src="{% static 'img/popular4.png' %}" alt="">
-                            <div class="img-cap">
-                              <h4 class="aida-font">تصاميم منازل </h4>
-                            <p class="aida-font">أعمالنا تناسب كل الأذواق</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <section>
+                                                 <div class="slider-area">
+    <div class="slider-full-active owl-carousel custom-dots">
+        <div class="slide-full slider-height d-flex align-items-center"
+             style="background-image: url(../../../static/img/popular1.png);">
+        </div>
+        <div class="slide-full d-flex slider-height align-items-center"
+             style="background-image: url(../../../static/img/popular2.png);">
+
+        </div>
+        <div class="slide-full d-flex slider-height align-items-center"
+             style="background-image: url(../../../static/img/popular3.png);">
+        </div>
+        <div class="slide-full d-flex slider-height align-items-center"
+             style="background-image: url(../../../static/img/popular4.png);">
+        </div>
+
+    </div>
+</div>
+
+                </section>
             </div>
         </section>
         <!-- Popular Work End -->
@@ -205,7 +188,7 @@
                         <div class="experience-caption">
                           <h2 class="aida-font">ابدأ رحلتك معنا</h2>
                         <p class="aida-font">انضم لشبكة المهندسين والمصممين </p>
-                        <a href="{% url 'request-work' %}" class="btn aida-font">إيدأ</a>
+                        <a href="{% url 'register-engineer' %}" class="btn aida-font">إيدأ</a>
                         </div>
                     </div>
                 </div>
@@ -266,40 +249,44 @@
         <!--? All startups Start -->
         <div class="starups-area testimonial-area fix">
             <!--left Contents  -->
-            <div class="starups-img">
+                            <div class="col-12">
+                <div class="starups-img">
                 <div class="play-btn"><a class="popup-video" href="https://www.youtube.com/watch?v=ssBM8JaPMiw"><i class="flaticon-null-3"></i></a></div>
             </div>
-            <!-- Right Contents -->
-            <div class="starups">
-                <!--? Testimonial Start -->
-                <div class="h1-testimonial-active">
-                    <!-- Single Testimonial -->
-                    <div class="single-testimonial text-center">
-                        <div class="testimonial-caption ">
-                            <!-- founder -->
-                            <div class="testimonial-founder d-flex align-items-center justify-content-center mb-40">
-                                <div class="founder-img">
-                                    <img src="{% static 'img/testimonial.png' %}" alt="">
-                                </div>
-                                <div class="founder-text">
-                                   <span class="aida-font">أماني الشعلان</span>
-                                <p class="aida-font">باوهاوس</p>
-                                </div>
-                            </div>
-                            <!-- Caption -->
-                            <div class="testimonial-top-cap">
-     <p class="body-font">
-                                ريادة أعمال وفكرة اجتمعت عليها ثلاثة سيدات أماني الشعلان وفاطمه أبو القاسم وشذى السعيد
-                                للمساهمة في تبسيط مجال الهندسة المعمارية والتصميم الداخلي والترميم بما يتناسب مع ذائقة
-                                العميل وشخصيته والميزانية المعتمده، من خلال باوهاوس نطمح بتكوين شبكة من المهندسين
-                                والمهنين وأن يكون الوضوح والثقة طريقتنا .</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial End -->
             </div>
+
+
+            <!-- Right Contents -->
+{#            <div class="starups">#}
+{#                <!--? Testimonial Start -->#}
+{#                <div class="h1-testimonial-active">#}
+{#                    <!-- Single Testimonial -->#}
+{#                    <div class="single-testimonial text-center">#}
+{#                        <div class="testimonial-caption ">#}
+{#                            <!-- founder -->#}
+{#                            <div class="testimonial-founder d-flex align-items-center justify-content-center mb-40">#}
+{#                                <div class="founder-img">#}
+{#                                    <img src="{% static 'img/testimonial.png' %}" alt="">#}
+{#                                </div>#}
+{#                                <div class="founder-text">#}
+{#                                   <span class="aida-font">أماني الشعلان</span>#}
+{#                                <p class="aida-font">باوهاوس</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <!-- Caption -->#}
+{#                            <div class="testimonial-top-cap">#}
+{#     <p class="body-font">#}
+{#                                ريادة أعمال وفكرة اجتمعت عليها ثلاثة سيدات أماني الشعلان وفاطمه أبو القاسم وشذى السعيد#}
+{#                                للمساهمة في تبسيط مجال الهندسة المعمارية والتصميم الداخلي والترميم بما يتناسب مع ذائقة#}
+{#                                العميل وشخصيته والميزانية المعتمده، من خلال باوهاوس نطمح بتكوين شبكة من المهندسين#}
+{#                                والمهنين وأن يكون الوضوح والثقة طريقتنا .</p>#}
+{#                            </div>#}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- Testimonial End -->#}
+{#            </div>#}
         </div>
         <!--All startups End -->
         <!--? Blog Area Start -->

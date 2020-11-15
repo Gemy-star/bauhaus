@@ -131,21 +131,28 @@ def perform_survey(request):
     if request.method == 'GET':
         return render(request, 'office/survey.html', context)
     elif request.method == 'POST' and request.is_ajax:
-        color = request.POST.get('color')
-        interest = request.POST.get('interest')
-        quote = request.POST.get('quote')
-        service = request.POST.get('service')
-        service_obj = models.Service.objects.get(pk=service)
-        user_ob = User.objects.get(pk=request.user.pk)
-        survey = models.Survey(interests=interest, color=color, service_type=service_obj, quote=quote,
-                               user=user_ob)
-        if survey:
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        address = request.POST.get('address')
+        though_q = request.POST.get('though_q')
+        hobby_q = request.POST.get('hobby_q')
+        design_q = request.POST.get('design_q')
+        color_q = request.POST.get('color_q')
+        personal_q = request.POST.get('personal_q')
+        hotcolor_q = request.POST.get('hotcolor_q')
+        shape_q = request.POST.get('shape_q')
+        birthday = request.POST.get('birthday')
+        survey = models.Survey(name=name, address=address, phone=phone, personal_q=personal_q, hobby_q=hobby_q,
+                               hotcolor_q=hotcolor_q, design_q=design_q, color_q=color_q
+                               , shape_q=shape_q, birthday=birthday, though_q=though_q)
+        survey.save()
+
+        if survey.pk:
             return JsonResponse({"data": "1"})
         else:
             return JsonResponse({"data": "-1"})
     else:
         return render(request, 'office/survey.html', context)
-
 
 def get_Services(request):
     if request.method == 'POST' and request.is_ajax:

@@ -2,9 +2,9 @@
 
 {% block title %} تمتع بخدماتنا{% endblock title %}
 
-{% block body %}
+{% block content %}
 
-    <div class="slider-area2" style="background-image: url(../../../static/images/hero2.png);">
+    <div class="slider-area2" style="background-image: url(../../../static/img/hero2.png);">
         <div class="slider-height2 d-flex align-items-center">
             <div class="container">
                 <div class="row">
@@ -21,52 +21,139 @@
     <section class="service-area pt-150 pb-150">
         <div class="container">
             <div class="col-12">
-              <center> <h2 class="contact-title aida-font">نتطلع لمعرفتك أكثر </h2> </center>
+                <center><h2 class="contact-title aida-font">نتطلع لمعرفتك أكثر </h2></center>
                 <hr/>
                 <br>
-                <p class="aida-font"> {{ user.first_name }}</p>
             </div>
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
+                <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <textarea class="form-control w-100 body-font" name="quote" id="quote" cols="30" rows="9"
-                                  onfocus="this.placeholder = ''"
-                                  onblur="this.placeholder = 'اكتب نبذه مختصره عن نفسك '"
-                                  placeholder=" اكتب نبذه مختصره عن نفسك "></textarea>
+                        <label for="color_q" class="body-font"> هل انت من مفضلين الألوان المبهجة ام القاتمة؟</label>
+                        <select name="plan" id="color_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
                     </div>
                 </div>
+
+                </div>
+                <hr/>
                 <div class="row">
-                    <div class="col-6">
-
-                        <div class="form-select" id="default-select">
-                            <select name="service" id="service" class="body-font">
-                                {% for s in Services %}
-                                    <option value="{{ s.pk }}">{{ s.name }}
-                                {% endfor %}
-                            </select>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                                <textarea class="form-control w-100 body-font" name="interest" id="interest" cols="30"
-                                          rows="9"
-                                          onfocus="this.placeholder = ''" onblur="this.placeholder = 'أكتب إهتمامتك'"
-                                          placeholder=" أكتب إهتمامتك"></textarea>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-sm-6">
+                <div class="col-12">
                     <div class="form-group">
-                        <input class="form-control valid" name="color" id="color" type="text"
-                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'إكتب لونك المفضل'"
-                               placeholder="إكتب لونك المفضل">
+                        <label for="design_q" class="body-font"> هل انت من محبين التصميم الحديث العصري؟</label>
+                        <select name="plan" id="design_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
                     </div>
+                </div>
+
+                </div>
+                                <hr/>
+
+<div class="row">
+                    <div class="col-12">
+                    <div class="form-group">
+                        <label for="hotcolor_q" class="body-font"> هل انت من مفضلين الألوان الحارة , مثل : الأحمر , الأصفر؟</label>
+                        <select name="plan" id="hotcolor_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
+                    </div>
+                </div>
+
+</div>
+                <hr/>
+
+                <div class="row form-group">
+                                    <div class="col-12">
+                    <div class="form-group">
+                        <label for="personal_q" class="body-font"> هل شخصيتك من الشخصيات متغيرة الاطباع ؟</label>
+                        <select name="plan" id="personal_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
+                    </div>
+                </div>
+
+                </div>
+                <hr/>
+
+                <div class="row">
+               <div class="col-12">
+                    <div class="form-group">
+                        <label for="shape_q" class="body-font"> هل انت من مفضلين الأشكال الانسيابية ام المنظمة ؟</label>
+                        <select name="plan" id="shape_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
+                    </div>
+                </div>
+
+                </div>
+                <hr/>
+<div class="row">
+               <div class="col-12">
+                    <div class="form-group">
+                        <label for="hobby_q" class="body-font">هل انت من محبين التأمل والقراءة؟</label>
+                        <select name="plan" id="hobby_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
+                    </div>
+                </div>
+
+</div>
+                <hr/>
+
+                <div class="row form-group">
+                                   <div class="col-12">
+                    <div class="form-group">
+                        <label for="though_q" class="body-font">هل شخصيتك تؤمن بعلم طاقة وتأثيرها على الإنسان؟</label>
+                        <select name="plan" id="though_q">
+                            <option value="0">لا</option>
+                            <option value="1" selected>نعم</option>
+                        </select>
+                    </div>
+                </div>
+
+                </div>
+                <hr/>
+
+                <div class="row form-group">
+                    <div class="col-6 form-group">
+      <label for="address" class="body-font">العنوان</label>
+     <input type="text" id="address" class="form-control" placeholder="اكتب العنوان">
+                    </div>
+                <div class="col-6 form-group">
+      <label for="phone" class="body-font">الهاتف</label>
+     <input type="text" class="form-control" id="phone" placeholder="اكتب الهاتف">
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="row form-group">
+                    <div class="col-12">
+                       <label for="name" class="body-font">الأسم</label>
+                  <input type="text" class="form-control" id="name" placeholder="اكتب الاسم">
+                    </div>
+                <hr/>
+
+                    <div class="row form-group">
+                                            <div class="col-12">
+                    <div class="form-group">
+                        <label for="birthday" class="body-font">تاريخ الميلاد</label>
+                        <input type="date" id="birthday">
+                    </div>
+                </div>
+
+                    </div>
+                <hr/>
+
+
                 </div>
                 <div class="form-group mt-3">
                     <center>
@@ -75,8 +162,8 @@
                 </div>
             </form>
         </div>
-    <div id="go">
-    </div>
+        <div id="go">
+        </div>
     </section>
     {% block javascript %}
         <script>
@@ -88,10 +175,17 @@
                         method: 'POST',
                         url: '{% url 'do-survey' %}',
                         data: {
-                            'quote': $("#quote").val(),
-                            'interest': $("#interest").val(),
-                            'color': $("#color").val(),
-                            'service': $("#service").val(),
+                            'name': $("#name").val(),
+                            'address': $("#address").val(),
+                            'phone': $("#phone").val(),
+                            'personal_q': $("#personal_q").val(),
+                            'hobby_q': $("#hobby_q").val(),
+                            'design_q': $("#design_q").val(),
+                            'color_q': $("#color_q").val(),
+                            'hotcolor_q': $("#hotcolor_q").val(),
+                            'though_q': $("#though_q").val(),
+                            'shape_q': $("#shape_q").val(),
+                            'birthday': $("#birthday").val(),
                             'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
                         },
                         success: function (data) {
@@ -126,4 +220,4 @@
         </script>
     {% endblock javascript %}
 
-{% endblock body %}
+{% endblock content %}
